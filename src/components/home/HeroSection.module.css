@@ -1,0 +1,98 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  background-color: var(--mantine-color-body);
+}
+
+/* Indian tricolor stripe at bottom of hero */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(to right, #FF9933 33.33%, #FFFFFF 33.33%, #FFFFFF 66.66%, #138808 66.66%);
+}
+
+.bgMap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at center, var(--mantine-color-orange-0) 0%, transparent 70%);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+/* Ashoka Chakra watermark */
+.chakra {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  width: 340px;
+  height: 340px;
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 62em) {
+  .chakra {
+    display: none;
+  }
+}
+
+:global([data-mantine-color-scheme='dark']) .bgMap {
+  background-image: radial-gradient(circle at center, var(--mantine-color-navy-9) 0%, transparent 70%);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--mantine-font-family-headings);
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--mantine-color-text);
+}
+
+@media (max-width: 48em) {
+  .title {
+    font-size: 42px;
+  }
+}
+
+.subtitle {
+  font-size: 24px;
+  color: var(--mantine-color-dimmed);
+}
+
+@media (max-width: 48em) {
+  .subtitle {
+    font-size: 18px;
+  }
+}
+
+.hindiText {
+  font-family: var(--font-tiro);
+  font-size: 28px;
+}
+
+.control {
+  @media (max-width: 36em) {
+    width: 100%;
+  }
+}
