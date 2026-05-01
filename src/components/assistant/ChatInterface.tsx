@@ -20,11 +20,11 @@ export function ChatInterface() {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const scrollRef = useRef<HTMLDivElement>(null)
+  const viewportRef = useRef<HTMLDivElement>(null)
 
   const scrollToBottom = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollIntoView({ behavior: 'smooth' })
+    if (viewportRef.current) {
+      viewportRef.current.scrollTo({ top: viewportRef.current.scrollHeight, behavior: 'smooth' })
     }
   }
 
@@ -120,7 +120,7 @@ export function ChatInterface() {
         {/* Chat Area */}
         <Grid.Col span={{ base: 12, md: 8 }}>
           <Card withBorder radius="md" shadow="sm" p={0} style={{ display: 'flex', flexDirection: 'column', height: '70vh', minHeight: '500px' }}>
-            <ScrollArea style={{ flex: 1, padding: '20px' }}>
+            <ScrollArea style={{ flex: 1, padding: '20px' }} viewportRef={viewportRef}>
               {chatHistory.length === 0 ? (
                 <div style={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', color: 'var(--mantine-color-dimmed)' }}>
                   <Bot size={60} opacity={0.2} />
@@ -199,7 +199,7 @@ export function ChatInterface() {
                       </Button>
                     </Group>
                   )}
-                  <div ref={scrollRef} />
+
                 </Stack>
               )}
             </ScrollArea>
