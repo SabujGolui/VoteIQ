@@ -13,7 +13,7 @@
 
 ## 🌐 Live Demo
 
-🔗 **[https://voteiq-xxxxxxxx-el.a.run.app](https://voteiq-xxxxxxxx-el.a.run.app)**
+🔗 **[https://voteiq-719773878620.asia-south1.run.app](https://voteiq-719773878620.asia-south1.run.app)**
 
 ---
 
